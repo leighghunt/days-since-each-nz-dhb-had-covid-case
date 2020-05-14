@@ -9,3 +9,13 @@ A quick and dirty tool to turn [@SirWB](https://twitter.com/SirWB)'s [slides](ht
 ```
 $ brew install coreutils ffmpeg
 ```
+
+
+
+
+### Notes:
+slides -> video
+https://stackoverflow.com/questions/24961127/how-to-create-a-video-from-images-with-ffmpeg
+
+video -> GIF
+https://askubuntu.com/questions/648603/how-to-create-an-animated-gif-from-mp4-video-via-command-line/837574#837574
