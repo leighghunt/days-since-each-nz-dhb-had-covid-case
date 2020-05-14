@@ -12,12 +12,17 @@ end=$(gdate -d $end +%Y%m%d)
 
 inputFolder=input
 workingFolder=working
+outputFolder=output
 fileCount=0
 imageType=jpeg
 #imageType=png
 
 if [[ ! -e $workingFolder ]]; then
   mkdir $workingFolder -p
+fi
+
+if [[ ! -e $outputFolder ]]; then
+  mkdir $outputFolder -p
 fi
 
 rm $workingFolder/*.$imageType
@@ -28,12 +33,12 @@ do
         start=$(gdate -d"$start + 1 day" +"%Y%m%d")
 
         inputFile=$inputFolder/Days_Since_${start:4:2}${start:6:2}.$imageType
-        outputFile=$workingFolder/$(printf "%03d" $fileCount).$imageType
+        workingFile=$workingFolder/$(printf "%03d" $fileCount).$imageType
 
-        # echo $inputFile to $outputFile
+        # echo $inputFile to $workingFile
 
         if [[ -f "$inputFile" ]]; then
-          cp $inputFile $outputFile
+          cp $inputFile $workingFile
           ((++fileCount))
         else
           echo File $inputFile not found!
