@@ -12,7 +12,9 @@ end=$(gdate -d $end +%Y%m%d)
 
 while [[ $start -le $end ]]
 do
-        echo $start
+        # echo $start
         start=$(gdate -d"$start + 1 day" +"%Y%m%d")
+        filename=Days_Since_${start:4:2}${start:6:2}.png
+        echo $filename
 
 done
