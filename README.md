@@ -14,13 +14,8 @@ $ brew install coreutils ffmpeg
 
 
 ### Notes:
-slides -> video
-https://trac.ffmpeg.org/wiki/Slideshow
-https://stackoverflow.com/questions/24961127/how-to-create-a-video-from-images-with-ffmpeg
+- [slides -> video](https://trac.ffmpeg.org/wiki/Slideshow)
 
-video -> GIF
-https://askubuntu.com/questions/648603/how-to-create-an-animated-gif-from-mp4-video-via-command-line/837574#837574
+- [video -> GIF](https://askubuntu.com/questions/648603/how-to-create-an-animated-gif-from-mp4-video-via-command-line/837574#837574)
 
-
-FFMPEG (libx264) “height not divisible by 2”
-https://stackoverflow.com/questions/20847674/ffmpeg-libx264-height-not-divisible-by-2
+- [FFMPEG (libx264) “height not divisible by 2”](https://stackoverflow.com/questions/20847674/ffmpeg-libx264-height-not-divisible-by-2)
