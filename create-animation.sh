@@ -13,7 +13,7 @@ end=$(gdate -d $end +%Y%m%d)
 inputFolder=input
 workingFolder=working
 outputFolder=output
-outputFile=out.mp4
+outputFile=out
 fileCount=0
 imageType=jpeg
 #imageType=png
@@ -48,8 +48,13 @@ do
 done
 
 echo Creating video...
-
+rm $outputFolder/$outputFile.mp4
 #ffmpeg -r 1/5 -i $workingFolder/%03d.$imageType -c:v libx264 -vf fps=25 -pix_fmt yuv420p $outputFolder/$outputFile
-ffmpeg -framerate 1 -i $workingFolder/%03d.$imageType -vf "pad=ceil(iw/2)*2:ceil(ih/2)*2" $outputFolder/$outputFile
+ffmpeg -framerate 1 -i $workingFolder/%03d.$imageType -vf "pad=ceil(iw/2)*2:ceil(ih/2)*2" $outputFolder/$outputFile.mp4
 
+echo Creating GIF...
+rm $outputFolder/$outputFile.gif
+#ffmpeg -framerate 1 -i $workingFolder/%03d.$imageType -vf scale=512:-1 $outputFolder/$outputFile.gif
+#ffmpeg -r 2 -i $outputFolder/$outputFile.mp4 -vf "fps=4" $outputFolder/$outputFile.gif
+ffmpeg -i $workingFolder/%03d.$imageType -vf "fps=4" $outputFolder/$outputFile.gif
 echo Done!
